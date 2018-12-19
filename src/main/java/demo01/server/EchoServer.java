@@ -1,4 +1,4 @@
-package server;
+package demo01.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -41,6 +41,7 @@ public class EchoServer {
         try {
             // 异步地绑定服务器;调用sync方法阻塞等待直到绑定完成
             ChannelFuture f = b.bind().sync();
+
             // 获取Channel的CloseFuture，并且阻塞当前线程直到它完成
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
